@@ -7,7 +7,7 @@
 
 int main(void)
 {	
-	char charVar;
+char charVar;
 	int intVar;
 	long int longIntVar;
 	long long int longLongIntVar;
