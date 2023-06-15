@@ -1,7 +1,10 @@
 #include <stdio.h>
 
 /**
- * Task no. 4
+ * main - prints the required line
+ *
+ * return (0) at the end
+ *
  */
 
 int main(void)
