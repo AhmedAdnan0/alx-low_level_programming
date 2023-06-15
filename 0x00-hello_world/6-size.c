@@ -6,8 +6,7 @@
  */
 
 int main(void)
-{
-	
+{	
 	char charVar;
 	int intVar;
 	long int longIntVar;
