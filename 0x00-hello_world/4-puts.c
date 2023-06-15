@@ -2,9 +2,7 @@
 
 /**
  * main - prints the required line
- *
- * return (0) at the end
- *
+ * Return: 0 (at the end)
  */
 
 int main(void)
