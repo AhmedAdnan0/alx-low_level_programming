@@ -2,7 +2,7 @@
 
 /**
  * main - This ffunction prints the alphapets
- * Return : 0 (Success)
+ * Return: 0 (Success)
  */
 
 int main(void)
