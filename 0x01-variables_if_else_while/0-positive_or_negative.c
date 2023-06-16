@@ -4,7 +4,6 @@
 
 /**
  * main - print whether the number is positive or negative
- * @n : the number to be tested
  * Return: 0 (Sucess)
  */
 
