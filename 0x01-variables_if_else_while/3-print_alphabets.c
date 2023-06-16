@@ -16,6 +16,15 @@ int main(void)
 		++i;
 		++a;
 	}
+	i = 0;
+	a = 'A';
+
+	while (i < 26)
+	{
+		putchar(a);
+		++i;
+		++a;
+	}
 	putchar('\n');
 	return (0);
 }
