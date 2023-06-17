@@ -11,7 +11,7 @@ int main(void)
 	int I = sizeof(quote);
 	int i;
 
-	for (i = 0; i <= I; ++i)
+	for (i = 0; i < I; ++i)
 	{
 		putchar(quote[i]);
 	}
