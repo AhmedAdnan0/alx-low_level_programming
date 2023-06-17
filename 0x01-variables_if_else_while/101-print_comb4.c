@@ -7,34 +7,26 @@
 
 int main(void)
 {
-	int x = 0;
-	int y = 0;
-	int z = 0;
+	int i = 0;
+	int a, b, c;
 
-	while (x < 10)
+	while (i < 1000)
 	{
-		while (y < 10)
+		a = i / 100;
+		b = (i % 100) / 10;
+		c = (i % 100) % 10;
+		if (b > a && c > b)
 		{
-			while (z < 10)
-			{
-				if (y > x && z > y)
+			putchar('0' + a);
+			putchar('0' + b);
+			putchar('0' + c);
+				if (!(a == 7 && b == 8))
 				{
-					putchar('0' + x);
-					putchar('0' + y);
-					putchar('0' + z);
-						if (!(x == 7 && y == 8))
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					putchar(',');
+					putchar(' ');
 				}
-			++z;
-			}
-		z = 0;
-		++y;
 		}
-	y = 0;
-	++x;
+	++i;
 	}
 	putchar('\n');
 	return (0);
