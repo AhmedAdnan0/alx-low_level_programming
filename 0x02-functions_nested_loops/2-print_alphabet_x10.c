@@ -5,7 +5,7 @@
  * Return: 0 in success
  */
 
-void print_alphabet(void)
+void print_alphabet_x10(void)
 {
 	char ltr;
 	int i = 0;
