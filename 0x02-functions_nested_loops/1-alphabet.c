@@ -7,14 +7,12 @@
 
 void print_alphabet(void)
 {
-	char *ltr = "a";
-	int i = 0;
+	int i = 97;
 
 	while (i < 26)
 	{
-		_putchar(ltr);
+		_putchar(i);
 		++i;
-		++ltr;
 	}
 	_putchar('\n');
 }
