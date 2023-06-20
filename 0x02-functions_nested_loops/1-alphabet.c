@@ -12,9 +12,9 @@ void print_alphabet(void)
 
 	while (i < 26)
 	{
-		return (_putchar(ltr));
+		_putchar(ltr);
 		++i;
 		++ltr;
 	}
-	return (_putchar("\n"));
+	_putchar("\n");
 }
