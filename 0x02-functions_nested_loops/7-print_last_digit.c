@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _abs - prints int abs
- *@i: int to get its abs
- *Return: int abs
+ * _print_last_digit - prints the last digit of a number
+ *@i: int to get its last digit
+ *Return: last digit of int`
  */
 
 int print_last_digit(int i)
