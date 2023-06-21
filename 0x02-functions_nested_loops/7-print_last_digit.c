@@ -6,7 +6,7 @@
  *Return: int abs
  */
 
-int _print_last_digit(int i)
+int print_last_digit(int i)
 {
 	return (i % 10);
 }
