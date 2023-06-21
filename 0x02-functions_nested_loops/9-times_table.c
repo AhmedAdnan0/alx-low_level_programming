@@ -4,7 +4,7 @@
  * times_table - prints every minute of the day
  */
 
-void times_table(void);
+void times_table(void)
 {
 	int i, j;
 
