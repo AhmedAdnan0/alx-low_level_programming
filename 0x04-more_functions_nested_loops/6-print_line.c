@@ -5,7 +5,7 @@
  * @n: num of "_"
  */
 
-void print_line(void n)
+void print_line(int n)
 {
 	int i;
 
