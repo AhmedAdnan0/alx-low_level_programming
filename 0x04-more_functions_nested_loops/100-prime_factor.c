@@ -8,17 +8,15 @@
 
 int main(void)
 {
-	long long i;
-	long long n = 612852475143;
-	long long pm = 1;
+	long long int i, n = 612852475143;
 
-	for (i = 1; i < n; ++i)
+	for (i = 3; i < n; i = i + 2)
 	{
-		if (n % i == 0)
+		while (n % i == 0)
 		{
-			pm = i;
+			n = n / i;
 		}
 	}
-	printf("%lli\n", pm);
+	printf("%lli\n", n);
 	return (0);
 }
