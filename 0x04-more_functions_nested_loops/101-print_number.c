@@ -9,6 +9,8 @@
 
 int int_size(int n)
 {
+	int i;
+
 	if (n > 10000)
 	{
 		i = 5;
@@ -39,8 +41,7 @@ int int_size(int n)
 
 void print_number(int n)
 {
-	int a, b, c, d, e;
-	int i = int_size(n);
+	int a, b, c, d, e, i = int_size(n);
 
 	if (n < 0)
 	{
@@ -52,30 +53,32 @@ void print_number(int n)
 	c = (n % 1000) / 100;
 	d = (n % 100) / 10;
 	e = (n % 10) / 1;
-	if (i >= 5)
+	if (n != 0)
 	{
-		_putchar('0' + a);
+		if (i >= 5)
+		{
+			_putchar('0' + a);
+		}
+		if (i >= 4)
+		{
+			_putchar('0' + b);
+		}
+		if (i >= 3)
+		{
+			_putchar('0' + c);
+		}
+		if (i >= 2)
+		{
+			_putchar('0' + d);
+		}
+		if (i >= 1)
+		{
+			_putchar('0' + e);
+		}
 	}
-	if (i >= 4)
-	{
-		_putchar('0' + b);
-	}
-	if (i >= 3)
-	{
-		_putchar('0' + c);
-	}
-	if (i >= 2)
-	{
-		_putchar('0' + d);
-	}
-	if (i >= 1)
-	{
-		_putchar('0' + e);
-	}
-	_putchar('n');
-	if (n == 0)
+	else if (n == 0)
 	{
 		_putchar('0');
-		_putchar('\n');
 	}
+		_putchar('\n');
 }
