@@ -41,13 +41,14 @@ int int_size(int n)
 
 void print_number(int n)
 {
-	int a, b, c, d, e, i = int_size(n);
+	int a, b, c, d, e, i;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
+	i = int_size(n);
 	a = (n / 10000);
 	b = (n % 10000) / 1000;
 	c = (n % 1000) / 100;
