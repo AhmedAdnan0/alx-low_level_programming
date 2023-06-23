@@ -9,29 +9,41 @@
 
 int int_size(int n)
 {
-	int i;
+	int i = 0;
 
-	if (n > 10000)
+	while (n > 0)
 	{
-		i = 5;
-	}
-	else if (n > 1000)
-	{
-		i = 4;
-	}
-	else if (n > 100)
-	{
-		i = 3;
-	}
-	else if (n > 10)
-	{
-		i = 2;
-	}
-	else if (n > 0)
-	{
-		i = 1;
+		i = i + 1;
+		n = n / 10;
 	}
 	return (i);
+}
+
+/**
+ * _pow - gets x to the power of y
+ * @x: bass
+ * @y: power
+ *
+ * Return: x to power y
+ */
+
+int _pow(int x, int y)
+{
+	int z = x;
+
+	if (y == 0)
+	{
+		return (1);
+	}
+	else
+	{
+		while (y > 1)
+		{
+			z = z * x;
+			--y;
+		}
+		return (z);
+	}
 }
 
 /**
@@ -41,42 +53,27 @@ int int_size(int n)
 
 void print_number(int n)
 {
-	int a, b, c, d, e, i;
+	int i, d;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
-	i = int_size(n);
-	a = (n / 10000);
-	b = (n % 10000) / 1000;
-	c = (n % 1000) / 100;
-	d = (n % 100) / 10;
-	e = (n % 10) / 1;
+
 	if (n != 0)
 	{
-		if (i >= 5)
+		i = int_size(n);
+
+		while (i >= 1)
 		{
-			_putchar('0' + a);
-		}
-		if (i >= 4)
-		{
-			_putchar('0' + b);
-		}
-		if (i >= 3)
-		{
-			_putchar('0' + c);
-		}
-		if (i >= 2)
-		{
+			d =  n % _pow(10, i) / _pow(10, i - 1);
 			_putchar('0' + d);
-		}
-		if (i >= 1)
-		{
-			_putchar('0' + e);
+			n = n - (d * _pow(10, i - 1));
+			--i;
 		}
 	}
+
 	else if (n == 0)
 	{
 		_putchar('0');
