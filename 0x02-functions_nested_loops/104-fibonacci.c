@@ -43,7 +43,7 @@ int main(void)
 		f1 = (a1 + b1) % 1000000000;
 		f2 = (a2 + b2) + (a1 + b1) / 1000000000;
 
-		printf(", %ld%ld", f1, f2);
+		printf(", %ld%ld", f2, f1);
 	}
 	printf("\n");
 	return (0);
