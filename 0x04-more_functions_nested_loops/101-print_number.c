@@ -7,7 +7,7 @@
  * Return: nums of digits
  */
 
-int int_size(int n)
+int int_size(unsigned int n)
 {
 	int i = 0;
 
@@ -27,9 +27,9 @@ int int_size(int n)
  * Return: x to power y
  */
 
-int _pow(int x, int y)
+unsigned int _pow(int x, int y)
 {
-	int z = x;
+	unsigned int z = x;
 
 	if (y == 0)
 	{
@@ -54,27 +54,39 @@ int _pow(int x, int y)
 void print_number(int n)
 {
 	int i, d;
+	unsigned int x;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		x = -n;
+	}
+	else
+	{
+		x = n;
 	}
 
-	if (n != 0)
+	if (x != 0)
 	{
-		i = int_size(n);
+		i = int_size(x);
 
+		if (i == 10)
+		{
+			d = x / _pow(10, 9);
+			_putchar('0' + d);
+			x = x - (d * _pow(10, 9));
+			i = 9;
+		}
 		while (i >= 1)
 		{
-			d =  n % _pow(10, i) / _pow(10, i - 1);
+			d =  x % _pow(10, i) / _pow(10, i - 1);
 			_putchar('0' + d);
-			n = n - (d * _pow(10, i - 1));
+			x = x - (d * _pow(10, i - 1));
 			--i;
 		}
 	}
 
-	else if (n == 0)
+	else if (x == 0)
 	{
 		_putchar('0');
 	}
