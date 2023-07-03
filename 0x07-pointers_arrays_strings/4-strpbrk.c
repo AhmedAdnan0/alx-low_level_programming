@@ -25,6 +25,10 @@ char *_strpbrk(char *s, char *accept)
 		}
 	++s;
 	}
+	if (*s == accept [i])
+	{
+		return (s);
+	}
 
 	return (NULL);
 }
