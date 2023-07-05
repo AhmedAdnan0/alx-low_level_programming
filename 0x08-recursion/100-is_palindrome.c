@@ -1,6 +1,21 @@
 #include "main.h"
 
 /**
+ * _strlen_recursion - prints out a string in reverse
+ * @s: input string
+ *
+ * Return: string 's' length
+ */
+
+int _strlen_recursion(char *s)
+{
+	if (*s)
+	{
+		return (1 + _strlen_recursion(s + 1));
+	}
+	return (0);
+}
+/**
  * check - helper function
  * @s: input string
  * @a: first char
@@ -37,12 +52,7 @@ int check(char *s, int a, int b)
 
 int is_palindrome(char *s)
 {
-	int i = 0;
-
-	while (s[i])
-	{
-		++i;
-	}
+	int i = _strlen_recursion(s);
 
 	if (i == 0)
 	{
