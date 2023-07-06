@@ -18,16 +18,16 @@ int cmp(char *s1, char *s2, int i, int j)
 		return (1);
 
 	if (s1[i] == s2[j])
-		return (cmp(s1, s2, ++i, ++j));
+		return (cmp(s1, s2, i + 1, j + 1));
 
 	if (s2[j] == '*')
-		return (cmp(s1, s2, i, ++j));
+		return (cmp(s1, s2, i, j + 1));
 
-	if (s2[j] == '\0' && s2[--j] == '*')
+	if (s2[j] == '\0' && s2[j - 1] == '*')
 		return (1);
 
-	if (s2[--j] == '*')
-		return (cmp(s1, s2, ++i, j));
+	if (s2[j - 1] == '*')
+		return (cmp(s1, s2, i + 1, j));
 
 	return (0);
 }
