@@ -12,15 +12,16 @@
 int check(char *x)
 {
 	int i = 0;
+
 	if (x[0] == '-')
 		++i;
 
 	while (x[i] >= '0' && x[i] <= '9' && x[i] != '\0')
 		++i;
-	
+
 	if (x[i] == '\0')
 		return (0);
-	
+
 	return (1);
 }
 /**
