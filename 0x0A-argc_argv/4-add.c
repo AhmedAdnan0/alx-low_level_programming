@@ -2,6 +2,28 @@
 #include <stdlib.h>
 
 /**
+ * check - checks if all chars are digits
+ * @x: string to be checked
+ *
+ * Return: 0 (all are digits)
+ *         1 (otherwise)
+ */
+
+int check(char *x)
+{
+	int i = 0;
+	if (x[0] == '-')
+		++i;
+
+	while (x[i] >= '0' && x[i] <= '9' && x[i] != '\0')
+		++i;
+	
+	if (x[i] == '\0')
+		return (0);
+	
+	return (1);
+}
+/**
  * main - prints the addation of all input nums
  * @argc: argument count
  * @argv: argument vaalue
@@ -16,15 +38,15 @@ int main(int argc, char *argv[])
 
 	if (argc == 1)
 	{
-		printf("Error\n");
-		return (1);
+		printf("0\n");
+		return (0);
 	}
 
 	for (i = 1; i < argc; ++i)
 	{
 		sum = sum + atoi(argv[i]);
 
-		if (atoi(argv[i]) == 0)
+		if (check(argv[i]) == 1)
 		{
 			printf("Error\n");
 			return (1);
