@@ -51,7 +51,7 @@ int len_word(char *word)
 
 char **strtow(char *str)
 {
-	int i, j = -1, k - 0, words;
+	int i, j = -1, k = 0, words;
 	char **ptr;
 
 	if (str == NULL || str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
