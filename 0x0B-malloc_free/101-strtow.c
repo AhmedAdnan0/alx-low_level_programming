@@ -68,7 +68,7 @@ char **strtow(char *str)
 		else if (i == 0 || str[i - 1] == ' ')
 		{
 			++j;
-			ptr[j] = malloc(len_word(&str[i]) * sizeof(char));
+			ptr[j] = malloc((1 + len_word(&str[i])) * sizeof(char));
 			if (ptr[j] == NULL)
 			{
 				for (; j >= 0; --j)
