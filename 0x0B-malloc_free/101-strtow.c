@@ -51,10 +51,10 @@ int len_word(char *word)
 
 char **strtow(char *str)
 {
-	int i, j = -1, k, words;
+	int i, j = -1, k - 0, words;
 	char **ptr;
 
-	if (str == NULL || str[0] == '\0')
+	if (str == NULL || str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
 		return (NULL);
 	words = count_words(str);
 	ptr = (char **)malloc(sizeof(char *) * words + 1);
@@ -65,7 +65,7 @@ char **strtow(char *str)
 	{
 		if (str[i] == ' ')
 			k = 0;
-		else if (str[i - 1] == ' ')
+		else if (i == 0 || str[i - 1] == ' ')
 		{
 			++j;
 			ptr[j] = malloc(len_word(&str[i]) * sizeof(char));
