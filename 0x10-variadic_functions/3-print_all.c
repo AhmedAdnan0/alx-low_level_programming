@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>
+#include <stddef.h>
 
 /**
  * print_all - prints all arguments
@@ -14,8 +15,8 @@ void print_all(const char * const format, ...)
 	va_list arg;
 
 	va_start(arg, format);
-
-	n = strlen(format);
+	while (format != NULL)
+		n = strlen(format);
 	while (format != NULL && i < n)
 	{
 		check = 0;
