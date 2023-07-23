@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>
-#include <stddef.h>
 
 /**
  * print_all - prints all arguments
@@ -15,38 +14,36 @@ void print_all(const char * const format, ...)
 	va_list arg;
 
 	va_start(arg, format);
-	if (format != NULL)
+
+	n = strlen(format);
+	while (format != NULL && i < n)
 	{
-		n = strlen(format);
-		while (i < n)
+		check = 0;
+		switch (format[i])
 		{
-			check = 0;
-			switch (format[i])
-			{
-				case 'c':
-					printf("%c", va_arg(arg, int));
-					check = 1;
-					break;
-				case 'i':
-					printf("%d", va_arg(arg, int));
-					check = 1;
-					break;
-				case 'f':
-					printf("%f", va_arg(arg, double));
-					check = 1;
-					break;
-				case 's':
-					str = va_arg(arg, char *);
-					if (str  == NULL)
-						str = "(nil)";
-					printf("%s", str);
-					check = 1;
-					break;
-			}
-			if (check == 1 && i != n - 1)
-				printf(", ");
-			++i;
+			case 'c':
+				printf("%c", va_arg(arg, int));
+				check = 1;
+				break;
+			case 'i':
+				printf("%d", va_arg(arg, int));
+				check = 1;
+				break;
+			case 'f':
+				printf("%f", va_arg(arg, double));
+				check = 1;
+				break;
+			case 's':
+				str = va_arg(arg, char *);
+				if (str  == NULL)
+					str = "(nil)";
+				printf("%s", str);
+				check = 1;
+				break;
 		}
+		if (check == 1 && i != n - 1)
+			printf(", ");
+		++i;
 	}
 	printf("\n");
 	va_end(arg);
