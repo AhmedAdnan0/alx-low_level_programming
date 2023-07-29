@@ -27,7 +27,7 @@ size_t print_list(const list_t *h)
 		}
 		++n;
 		if (h->next == NULL)
-			return(n);
+			return (n);
 		h = h->next;
 	}
 }
