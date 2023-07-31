@@ -2,6 +2,7 @@
 
 /**
  * free_listint2 - sets the head to NULL
+ * @head: list's head
  */
 
 void free_listint2(listint_t **head)
@@ -18,4 +19,5 @@ void free_listint2(listint_t **head)
 		}
 	}
 	free(*head);
+	*head = temp
 }
