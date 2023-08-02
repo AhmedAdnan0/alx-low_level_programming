@@ -2,7 +2,7 @@
 
 /**
  * pop_listint - deletes the head note
- * @head - list head
+ * @head: list head
  * Return: deleted note value
  */
 
