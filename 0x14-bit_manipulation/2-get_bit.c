@@ -9,6 +9,8 @@
 
 int get_bit(unsigned long int n, unsigned int i)
 {
+	if (i > 31)
+		return (-1);
 	if ((n >> i) & 1)
 		return (1);
 	else if (!((n >> i) & 1))
