@@ -2,6 +2,28 @@
 #include "main.h"
 
 /**
+ * err98 - Error message
+ * @ff: file name
+ */
+
+void err98(char *ff)
+{
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", ff);
+	exit(98);
+}
+
+/**
+ * err99 - Error message
+ * @ff: file name
+ */
+
+void err99(char *ff)
+{
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", ff);
+	exit(99);
+}
+
+/**
  * main - copies the content of a file to another file
  * @argc: no of arguments
  * @argv: file names
@@ -21,31 +43,19 @@ int main(int argc, char *argv[])
 	}
 	ffd = open(argv[1], O_RDONLY);
 	if (ffd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+		err98(argv[1]);
 	ftd = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 00664);
 	if (ftd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+		err99(argv[2]);
 	r = 1024;
 	while (r == 1024)
 	{
 		r = read(ffd, buffer, 1024);
 		if (r == -1)
-		{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-		}
+			err98(argv[1]);
 		w = write(ftd, buffer, r);
 		if (w == -1)
-		{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-		}
+			err99(argv[2]);
 	}
 	cf = close(ffd);
 	if (cf == -1)
