@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	ftd = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 00664);
 	if (ftd == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	r = 1024;
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 		w = write(ftd, buffer, r);
 		if (w == -1)
 		{
-		dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 		}
 	}
